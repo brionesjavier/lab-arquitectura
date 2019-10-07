@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+nombre de integrantes
+	
+	Javier Briones
+	Gabriel Gonzalez
+	Constanza Perez
+Heroku
+https://arquisis.herokuapp.com/users/sign_in
+
