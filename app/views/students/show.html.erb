@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @student.nombre %>
+</p>
+<p>
+  <strong>studen id:</strong>
+  <%= @student.id %>
+</p>
+
+<h2>curso del alumno</h2>
+<tbody>
+  <% @student.sections.each do |section| %>
+    <tr>
+      <td><%= section.course.nombreCurso %></td><br />
+      
+    </tr>
+  <% end %>
+</tbody>
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

@@ -1,0 +1,34 @@
+<%= form_with model: @course, local: true do |form| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@course.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @course.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :nrc %><br>
+    <%= form.number_field :nrc %>
+  </p>
+
+  <p>
+    <%= form.label :sigla %><br>
+    <%= form.text_field :sigla %>
+  </p>
+
+  <p>
+    <%= form.label :'nombre curso' %><br>
+    <%= form.text_area :'nombreCurso' %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

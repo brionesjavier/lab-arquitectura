@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @teacher.nombre %>
+</p>
+<p>
+  <strong>teacher id:</strong>
+  <%= @teacher.id %>
+</p>
+
+<h2>curso del profesor</h2>
+<tbody>
+  <% @teacher.sections.each do |section| %>
+    <tr>
+      <td><%= section.course.nombreCurso %></td><br />
+
+    </tr>
+  <% end %>
+</tbody>
+
+<h2> Notas del profesor</h2>
+<tbody>
+  <% @teacher.sections.each do |section| %>
+    <tr>
+    <td><%= section.course.nombreCurso %></td>
+      <td><%= section.nota %></td><br />
+
+    </tr>
+  <% end %>
+</tbody>
+
+<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+<%= link_to 'Back', teachers_path %>

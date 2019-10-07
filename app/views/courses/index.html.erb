@@ -1,0 +1,25 @@
+<h1>Listado De Cursos</h1>
+
+<%= link_to 'Nuevo curso', new_course_path %>
+<table>
+  <tr>
+    <th>nrc</th>
+    <th>sigla</th>
+    <th>nombreCurso</th>
+    <th></th>
+  </tr>
+
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.nrc %></td>
+      <td><%= course.sigla %></td>
+      <td><%= course.nombreCurso %></td>
+      <td><%= link_to 'Ver', course_path(course) %></td>
+      <td><%= link_to 'Edit', edit_course_path(course) %></td>
+      <td><%= link_to 'Destroy', course_path(course),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'volver', controller: 'welcome' %>

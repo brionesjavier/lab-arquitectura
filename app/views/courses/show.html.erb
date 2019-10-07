@@ -1,0 +1,45 @@
+<p>
+  <strong>NRC:</strong>
+  <%=@course.nrc %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%=@course.sigla %>
+</p>
+
+<p>
+  <strong>Nombre Curso:</strong>
+  <%= @course.nombreCurso %>
+</p>
+
+<p>
+  <strong>Curso id:</strong>
+  <%= @course.id %>
+</p>
+
+<p>
+<h2>Comments</h2>
+<%= render @course.comments %>
+</p>
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @course, @course.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :nombreUsuario %><br>
+    <%= form.text_field :nombreUsuario %>
+  </p>
+  <p>
+    <%= form.label :comentario %><br>
+    <%= form.text_area :comentario %>
+  </p>
+  <p>
+    <%= form.submit("guardar") %>
+  </p>
+<% end %>
+
+
+<%= link_to 'volver', courses_path %>
+<%= link_to 'editar', edit_course_path %>
+<%= link_to 'eliminar', course_path(params[:id]),
+              method: :delete,
+              data: { confirm: 'estas seguro ?' } %>

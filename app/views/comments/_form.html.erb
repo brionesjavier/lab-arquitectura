@@ -1,0 +1,13 @@
+<%= form_with(model: [ @course, @course.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :nombreUsuario %><br>
+    <%= form.text_field :nombreUsuario %>
+  </p>
+  <p>
+    <%= form.label :comments %><br>
+    <%= form.text_area :comments %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
