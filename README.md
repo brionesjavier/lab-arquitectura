@@ -25,7 +25,7 @@ Things you may want to cover:
 
 nombre de integrantes
 	
-	Javier Briones
+	Javier Briones(lier)
 	Gabriel Gonzalez
 	Constanza Perez
 Heroku
